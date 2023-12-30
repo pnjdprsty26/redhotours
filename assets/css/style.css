@@ -803,7 +803,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta1 {
-  background: linear-gradient(rgba(59, 48, 5, 0.2), rgba(43, 56, 54, 0)), url("../img/cta/cta-33.jpg") fixed center center;
+  background: linear-gradient(rgba(51, 50, 47, 0.557), rgba(43, 56, 54, 0)), url("../img/cta/cta-33.jpg") fixed center center;
 
   background-size: cover;
   padding: 100px 0;
@@ -878,7 +878,7 @@ section {
 
 
 .cta2 {
-  background: linear-gradient(rgba(43, 56, 54, 0), rgba(255, 217, 0, 0.2)), url("../img/cta/cta-2.jpg") fixed center center;
+  background: linear-gradient(rgba(43, 56, 54, 0), rgba(255, 217, 0, 0.2)), url("../img/cta/cta-22.jpg") fixed center center;
 
   background-size: cover;
   padding: 100px 0;
