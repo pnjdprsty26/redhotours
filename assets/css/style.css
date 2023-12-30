@@ -803,7 +803,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta1 {
-  background: linear-gradient(rgba(255, 217, 0, 0.2), rgba(43, 56, 54, 0)), url("../img/cta/cta-33.jpg") fixed center center;
+  background: linear-gradient(rgba(59, 48, 5, 0.2), rgba(43, 56, 54, 0)), url("../img/cta/cta-33.jpg") fixed center center;
 
   background-size: cover;
   padding: 100px 0;
@@ -813,7 +813,7 @@ section {
 .cta1 img.halal1 {
   width: 30%;
   height: 30%;
-  object-fit: cover;
+  object-fit: cover;  
 }
 
 .cta1 h3.top {
@@ -825,7 +825,7 @@ section {
 }
 
 .cta1 span.left {
-  color: #cea73a;
+  color: #ffffff;
   font-size: 46px;
   font-weight: 900;
   letter-spacing: 2px;
