@@ -12,14 +12,12 @@
   <!-- Favicons -->
   <link href="assets/img/logo/redhotours-black.png " rel="icon">
   <link href="assets/img/logo/redhotours-black.png" rel="apple-touch-icon">
-  
+
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -102,8 +100,7 @@
       <div class="logo">
         <!-- <h1 class="text-light"><a href="index.html"><span>REDHO TOURS & TRAVEL</span></a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt=""
-            class="img-fluid"></a>
+        <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -143,7 +140,7 @@
       </div>
       </div>
     </section><!-- end ignore space -->
-    
+
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about section-bg">
       <div class="container">
@@ -151,7 +148,7 @@
           <h2>TENTANG REDHO TOURS & TRAVEL</h2>
           <p>
             Redho Tour & Travel adalah perusahaan travel profesional dengan lebih dari 20 tahun pengalaman dalam industri perhotelan, pariwisata domestik dan internasional, inbound, outbound, serta spesialisasi dalam pariwisata halal, umroh, dan haji. Kami bangga menjadi mitra perjalanan Anda dalam merencanakan pengalaman ibadah yang tak terlupakan.
-            </p>
+          </p>
         </div>
         <div class="row">
           <div class="col-lg-6">
@@ -175,41 +172,41 @@
     <section id="services1" class="services section-bg">
       <div class="container">
         <div class="text-center">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-currency-dollar"></i></div>
-              <h4 class="title"><a href="">Harga Terjangkau</a></h4>
-              <p class="description">Dapatkan beragam pilihan paket umroh & haji dengan penawaran terbaik</p>
+          <div class="row">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-currency-dollar"></i></div>
+                <h4 class="title"><a href="">Harga Terjangkau</a></h4>
+                <p class="description">Dapatkan beragam pilihan paket umroh & haji dengan penawaran terbaik</p>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-book"></i></div>
-              <h4 class="title"><a href="">Beragam Layanan</a></h4>
-              <p class="description">Kami menyediakan layanan paket umroh, paket haji, paket wisata, badal haji, badal umroh dan sebagainya</p>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-book"></i></div>
+                <h4 class="title"><a href="">Beragam Layanan</a></h4>
+                <p class="description">Kami menyediakan layanan paket umroh, paket haji, paket wisata, badal haji, badal umroh dan sebagainya</p>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-cart-check"></i></div>
-              <h4 class="title"><a href="">Pemesanan Mudah</a></h4>
-              <p class="description">Hanya 3 langkah mudah kurang dari 5 menit, transaksi anda bersama REDHO TOUR & TRAVEL selesai</p>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-cart-check"></i></div>
+                <h4 class="title"><a href="">Pemesanan Mudah</a></h4>
+                <p class="description">Hanya 3 langkah mudah kurang dari 5 menit, transaksi anda bersama REDHO TOUR & TRAVEL selesai</p>
+              </div>
             </div>
-          </div>
-          
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-shield-check"></i></div>
-              <h4 class="title"><a href="">Travel Terpercaya</a></h4>
-              <p class="description">Berpengalaman lebih dari 20 tahun, REDHO TOUR & TRAVEL telah bersertifikat resmi</p>
-            </div>
-          </div>
 
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-shield-check"></i></div>
+                <h4 class="title"><a href="">Travel Terpercaya</a></h4>
+                <p class="description">Berpengalaman lebih dari 20 tahun, REDHO TOUR & TRAVEL telah bersertifikat resmi</p>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
       </div>
 
     </section><!-- End Our Services Section -->
@@ -219,97 +216,97 @@
       <div class="container">
         <div class="text-center">
           <h1><span class="left">Fasilitas yang didapatkan Jamaah</h1>
-            <br>
+          <br>
           <!-- <p></p> -->
           <!-- <a class="cta1-btn" href="#portfolio-flters">Browse Catalog</a> -->
-          
-    <!-- ======= Our Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
-        <div class="text-center">
-        <div class="row">
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-egg-fried"></i></div>
-              <h4 class="title"><a href="">Konsumsi</a></h4>
-              <p class="description">Konsumsi yang terjamin dari memulai perjalanan sampai selesai</p>
+          <!-- ======= Our Services Section ======= -->
+          <section id="services" class="services section-bg">
+            <div class="container">
+              <div class="text-center">
+                <div class="row">
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box">
+                      <div class="icon"><i class="bi bi-food"></i></div>
+                      <h4 class="title"><a href="">Konsumsi</a></h4>
+                      <p class="description">Konsumsi yang terjamin dari memulai perjalanan sampai selesai</p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box">
+                      <div class="icon"><i class="bx bx-passport"></i></div>
+                      <h4 class="title"><a href="">Visa Umroh & Haji</a></h4>
+                      <p class="description">Pengurusan visa umroh & haji untuk keperluan ibadah</p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box">
+                      <div class="icon"><i class="bi bi-bag-check"></i></div>
+                      <h4 class="title"><a href="">Perlengkapan Umrah</a></h4>
+                      <p class="description">Paket umroh dengan perlengkapan kebutuhan ibadah yang lengkap</p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box">
+                      <div class="icon"><i class="bi bi-person"></i></div>
+                      <h4 class="title"><a href="">Tour Leader/Muttawif</a></h4>
+                      <p class="description">Umroh dan haji didampingi oleh tour leader serta muttawif yang tersertifikasi</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-passport"></i></div>
-              <h4 class="title"><a href="">Visa Umroh & Haji</a></h4>
-              <p class="description">Pengurusan visa umroh & haji untuk keperluan ibadah</p>
+          </section><!-- End Our Services Section -->
+
+          <!-- ======= Our Services Section ======= -->
+          <section id="services" class="services section-bg">
+            <div class="container">
+              <div class="text-center">
+                <div class="row">
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box">
+                      <div class="icon"><i class="bi bi-house-door"></i></div>
+                      <h4 class="title"><a href="">Hotel Penginapan</a></h4>
+                      <p class="description">Akomodasi hotel/penginapan terbaik dan ternyaman</p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box">
+                      <div class="icon"><i class="bi bi-bus-front"></i></div>
+                      <h4 class="title"><a href="">Transportasi</a></h4>
+                      <p class="description">Transportasi yang nyaman untuk memudahkan perjalanan jamaah</p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box">
+                      <div class="icon"><i class="bi bi-cart-check"></i></div>
+                      <h4 class="title"><a href="">Pemesanan Mudah</a></h4>
+                      <p class="description">Hanya 3 langkah mudah kurang dari 5 menit, transaksi anda bersama REDHO TOUR & TRAVEL selesai</p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box">
+                      <div class="icon"><i class="bi bi-shield-check"></i></div>
+                      <h4 class="title"><a href="">Dokumentasi</a></h4>
+                      <p class="description">Dokumentasi untuk jamaah selama ibadah umroh dan haji</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-bag-check"></i></div>
-              <h4 class="title"><a href="">Perlengkapan Umrah</a></h4>
-              <p class="description">Paket umroh dengan perlengkapan kebutuhan ibadah yang lengkap</p>
-            </div>
-          </div>
-          
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-person"></i></div>
-              <h4 class="title"><a href="">Tour Leader/Muttawif</a></h4>
-              <p class="description">Umroh dan haji didampingi oleh tour leader serta muttawif yang tersertifikasi</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      </div>
-
-    </section><!-- End Our Services Section -->
-
-        <!-- ======= Our Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
-        <div class="text-center">
-        <div class="row">
-          
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-house-door"></i></div>
-              <h4 class="title"><a href="">Hotel Penginapan</a></h4>
-              <p class="description">Akomodasi hotel/penginapan terbaik dan ternyaman</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-bus-front"></i></div>
-              <h4 class="title"><a href="">Transportasi</a></h4>
-              <p class="description">Transportasi yang nyaman untuk memudahkan perjalanan jamaah</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-cart-check"></i></div>
-              <h4 class="title"><a href="">Pemesanan Mudah</a></h4>
-              <p class="description">Hanya 3 langkah mudah kurang dari 5 menit, transaksi anda bersama REDHO TOUR & TRAVEL selesai</p>
-            </div>
-          </div>
-          
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-shield-check"></i></div>
-              <h4 class="title"><a href="">Dokumentasi</a></h4>
-              <p class="description">Dokumentasi untuk jamaah selama ibadah umroh dan haji</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      </div>
-
-    </section><!-- End Our Services Section -->
+          </section><!-- End Our Services Section -->
 
         </div>
 
@@ -318,7 +315,7 @@
 
     <!-- ======= Our Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
-      
+
       <div class="container">
 
         <div class="section-title">
@@ -338,8 +335,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery1.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -348,8 +344,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery2.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -358,8 +353,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery3.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery3.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -368,8 +362,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery4.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -378,8 +371,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery5.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery5.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -388,8 +380,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery6.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery6.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -398,8 +389,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery7.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery7.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -408,8 +398,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery8.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery8.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -418,8 +407,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/gallery/gallery9.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery9.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/gallery/gallery9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
               </div>
             </div>
           </div>
@@ -453,6 +441,194 @@
     </section><!-- end ignore space -->
 
 
+<!-- TESTIMONIAL -->
+
+    <div class="eh-main-front-section">
+      <div class="eh-main-front-section-inner">
+        <div id="testimoni-section" class="row layout-sll-ready layout-sll-tipe-1" style="
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f9f9f9;
+            background-image: url(https://bb71d2eac085c69b0.s3-jak01.storageraya.com/1638869882-890430/16585571475763-V0ZtKSOP1oaNcBEVDVx3DxoTvhARbTUvuExAj7DR.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+          ">
+          <div class="container no-padding">
+            <div class="komponen-sll-ready col-xs-12">
+              <div id="f477d581af184d6193578fddacfe703d67ad0157f" class="sub-komponen-sll teks skssl-sub-section" style="
+                  color: #000000;
+                  text-align: left;
+                  margin-bottom: 50px;
+                ">
+                <div class="eh-main-front-section">
+                  <div class="eh-main-front-section-inner">
+                    <div id="wa22a525ae561df433285fa0a13ebaf7756dffcc9" class="row layout-sll-ready layout-sll-tipe-1" style="">
+                      <div class="komponen-sll-ready col-xs-12">
+                        <div id="a2abee49be725944b9b03c77ed23afafb85383c24" class="sub-komponen-sll subtitle-text active-color skssl-heading" style="color: #e5b960; text-align: center;">
+                          <h3 class="">Testimoni</h3>
+                        </div>
+                        <div id="y1be26b5db3acc568025ee03bf4ac540fec2e2dfb" class="sub-komponen-sll title-text skssl-heading" style="
+                            color: #ffffff;
+                            text-align: center;
+                            margin-bottom: 32px;
+                          ">
+                          <h2 class="">
+                            Testimoni Jamaah SHAFIRA TOUR & TRAVEL
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="yb049d22fe8ac328c5900a2911eeab5a633b357ed" class="sub-komponen-sll skssl-sub-section" style="color: #000000; text-align: left;">
+                <div class="eh-main-front-section">
+                  <div class="eh-main-front-section-inner">
+                    <div id="y376aa26b80c6df6aa70cf4eac3da957b0d6e3d67" class="row layout-sll-ready layout-sll-tipe-1" style="">
+                      <div class="komponen-sll-ready col-xs-12">
+                        <div id="k6958516d1cda1f1567e674b3ced382a172504f56" class="sub-komponen-sll skssl-testimonial" style="color: #ffffff; text-align: left;">
+                          <div class="testimonial-outer">
+                            <div id="section-testimonial-client">
+                              <div id="wa2f77e904a44b3f523412ad7324d6cd4ab393754" class="carousel slide testimonial-area" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                  <div class="item active">
+                                    <div class="inner-testimonial">
+                                      <div class="judul">
+                                        Pelayanan Praktis & Mudah
+                                      </div>
+                                      <div class="pesan">
+                                        Saya merasakan sendiri pelayanan
+                                        umrah di PT. SHAFIRA LINTAS
+                                        SEMESTA sangat praktis dan
+                                        mudah. Mulai dari cara
+                                        pendaftaran, pembayaran sampai
+                                        keberangkatan
+                                      </div>
+                                      <div class="author">
+                                        Clarissa Adriana - 2015-05-14
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <div class="inner-testimonial">
+                                      <div class="judul">
+                                        Pelayanan Ramah & Kekeluargaan
+                                      </div>
+                                      <div class="pesan">
+                                        PT. SHAFIRA LINTAS SEMESTA
+                                        memiliki staff yang ramah dan
+                                        mampu menciptakan suasana
+                                        kekeluargaan. Ketika saya
+                                        berangkat umrah Tahun 2015 lalu,
+                                        seperti umrah dengan keluarga
+                                        sendiri.
+                                      </div>
+                                      <div class="author">
+                                        H. Abdul Aziz - 2015-10-01
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <div class="inner-testimonial">
+                                      <div class="judul">
+                                        Pelayanan Professional Harga
+                                        Bersahabat
+                                      </div>
+                                      <div class="pesan">
+                                        Pelayanan di PT. SHAFIRA LINTAS
+                                        SEMESTA sangat professional,
+                                        mulai dari keberangkatan dan
+                                        kedatangan kembali ke tanah air
+                                        dilayani dengan sangat baik
+                                      </div>
+                                      <div class="author">
+                                        Siti Humairah - 2016-07-23
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <div class="inner-testimonial">
+                                      <div class="judul">
+                                        Fasilitas Lengkap
+                                      </div>
+                                      <div class="pesan">
+                                        Alhamdulillah pengalaman pertama
+                                        saya umroh bersama Shafira luar
+                                        biasa. Pelayanan ramah baik crew
+                                        di Indonesia hingga di tanah
+                                        suci, nyaman dan fasilitas
+                                        lengkap
+                                      </div>
+                                      <div class="author">
+                                        Popi Apriani - 2023-07-21
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <div class="inner-testimonial">
+                                      <div class="judul">
+                                        Alur Layanan Cepat dan Memuaskan
+                                      </div>
+                                      <div class="pesan">
+                                        Alur layanan staff sigap dan
+                                        cepat. Perjalanan umroh di tiap
+                                        tahapnya lancar dan muthowwifnya
+                                        ramah. Terima kasih shafira
+                                      </div>
+                                      <div class="author">
+                                        Novita Andriani - 2023-07-21
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <div class="inner-testimonial">
+                                      <div class="judul">
+                                        Travel Umrah dan Haji Terpercaya
+                                      </div>
+                                      <div class="pesan">
+                                        Biro travel perjalanan umrah dan
+                                        haji yang terpercaya
+                                      </div>
+                                      <div class="author">
+                                        Rizky Dwi Putra - 2023-07-21
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <div class="inner-testimonial">
+                                      <div class="judul">
+                                        Agen Travel Umrah Terbaik
+                                      </div>
+                                      <div class="pesan">
+                                        Agen travel umrah terbaik.
+                                        Alhamdulillah sudah beberapa
+                                        kali ikut umrah bersama Shafira.
+                                        Pelayanan sangat baik & ramah,
+                                        jangan ragu lagi ?
+                                      </div>
+                                      <div class="author">
+                                        Kiki Gadistya - 2023-07-21
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- AKHIR TESTIMONIAL -->
 
     <!-- ======= Contact Us Section ======= -->
 
@@ -590,8 +766,7 @@
       </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
