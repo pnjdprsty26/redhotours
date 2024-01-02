@@ -1728,7 +1728,7 @@ section {
 # Testimonials Section
 --------------------------------------------------------------*/
 .testimonials {
-  margin-top: 80px; 
+  margin-top: 40px; 
 }
 
 .testimonials h3.top {
@@ -1741,8 +1741,8 @@ section {
 
 .testimonials span.left {
   color: #222222;
-  font-size: 46px;
-  font-weight: 900;
+  font-size: 36px;
+  font-weight: 800;
   letter-spacing: 2px;
   font-family: "Josefin Sans", sans-serif;
 }
