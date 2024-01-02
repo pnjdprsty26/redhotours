@@ -15,7 +15,6 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   outline: none;
-  
 }
 
 .glightbox-container.inactive {
@@ -28,7 +27,6 @@
   height: 100%;
   z-index: 9999;
   overflow: hidden;
-  
 }
 
 .glightbox-container .gslider {
