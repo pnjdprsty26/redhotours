@@ -1,2 +1,0 @@
-# redhotours
-Website Redhotours
