@@ -258,6 +258,13 @@
   });
 
   /**
+   * Initiate gallery lightbox 
+   */
+  const galleryLightbox = GLightbox({
+    selector: '.gallery-lightbox'
+  });
+
+  /**
    * Clients Slider
    */
   new Swiper('.clients-slider', {

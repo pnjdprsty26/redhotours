@@ -795,24 +795,24 @@ section {
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
-.cta {
+.ctaservices {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../img/cta-22.jpg") fixed center center;
   background-size: cover;
   padding: 20px 0;
 }
 
-.cta h2 {
+.ctaservices h2 {
   color: #fff;
   font-size: 32px;
   font-weight: 700;
 }
 
-.cta p {
+.ctaservices p {
   color: #000000;
   font-family: "Poppins", sans-serif;
 }
 
-.cta .cta-btn {
+.ctaservices .cta-btn {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -826,7 +826,7 @@ section {
   color: #fff;
 }
 
-.cta .cta-btn:hover {
+.ctaservices .ctaservices-btn:hover {
   background: #cea73a;
   border: 2px solid #cea73a;
 }
@@ -1723,4 +1723,64 @@ section {
 
 .clients .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--color-primary);
+}
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+.gallery {
+  padding-bottom: 0;
+}
+
+.gallery .gallery-item {
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.gallery .gallery-item img {
+  transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
+# Cta
+--------------------------------------------------------------*/
+.cta {
+  background: linear-gradient(rgba(66, 84, 81, 0.5), rgba(43, 56, 54, 0.5)), url("../img/cta-33.jpg") fixed center center;
+  background-size: cover;
+  padding: 60px 0;
+}
+
+.cta h3 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.cta p {
+  font-size: 18px;
+  color: #fff;
+}
+
+.cta .cta-btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #cea73a;
+  color: #fff;
+}
+
+.cta .cta-btn:hover {
+  background: #cea73a;
+  border: 2px solid #cea73a;
 }
