@@ -838,19 +838,36 @@ section {
   border-radius: 0;
 }
 
-.more-services .card {
-  border: 0;
-  text-align: ceneter;
+.more-services .card-body p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: #222; /* Warna teks */
 }
 
+/* Gaya untuk ikon di dalam elemen <p> */
+.more-services .card-body p i {
+  margin-right: 3px;
+  color: #cea73a; /* Warna ikon */
+}
+
+
+.more-services .card {
+  border: 0;
+  text-align: center;
+}
+
+
 .more-services .card-body {
-  -moz-text-align-last: center;
-  text-align-last: center;
+  -moz-text-align-last: left;
+  text-align-last: left;
+  font-size: 15px;
+  line-height: 1;
 }
 
 .more-services .card-title a {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   color: #334240;
   transition: ease-in-out 0.3s;
 }
@@ -1784,3 +1801,4 @@ section {
   background: #cea73a;
   border: 2px solid #cea73a;
 }
+
