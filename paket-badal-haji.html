@@ -1,3 +1,73 @@
+<?php
+//Koneksi ke database
+$koneksi = mysqli_connect("localhost", "root", "", "redhotoursdb");
+// Periksa koneksi
+if (mysqli_connect_errno()) {
+    die("Koneksi database gagal: " . mysqli_connect_error());
+}
+
+//jika tombol simpan diklik
+if (isset($_POST['bsimpan'])) {
+    //uji apakah data akan di edit atau disimpan baru
+    if ($_GET['hal'] == "edit") {
+        //data akan diedit
+        $edit = mysqli_query($koneksi, " UPDATE paketbadalhaji set  
+                                                waktu_pemesanan = '$_POST[twaktu_pemesanan]',
+                                                harga_layanan = '$_POST[tharga_layanan]'
+                                         WHERE id_paketbadalhaji = '$_GET[id]' ");
+        if ($edit) { //jika edit sukses
+            echo "<script> alert('edit data sukses!');
+                   document.location='admin-edit.php'
+                  </script>";
+        } else { //jika edit gagal
+            echo "<script> alert('edit data gagal!');
+                   document.location='admin-edit.php'
+                  </script>";
+        }
+    } else {
+        //data akan disimpan baru
+        $simpan = mysqli_query($koneksi, " INSERT INTO paketbadalhaji (waktu_pemesanan, harga_layanan)
+                                                VALUES ('$_POST[twaktu_pemesanan]',
+                                                        '$_POST[tharga_layanan]'
+                                                        ");
+        if ($simpan) { //jika simpan sukses
+            echo "<script> alert('simpan data sukses!');
+                   document.location='edit.php'
+                  </script>";
+        } else {
+            echo "<script> alert('simpan data gagal!');
+                   document.location='edit.php'
+                  </script>";
+        }
+    }
+}
+
+//tombol edit
+if (isset($_GET['hal'])) {
+    //tampil data yang akan di edit
+    if ($_GET['hal'] == "edit") {
+        //tampilkan data yang akan di edit
+        $tampil = mysqli_query($koneksi, "SELECT * FROM paketbadalhaji WHERE id_paketbadalhaji = '$_GET[id]'");
+        $data = mysqli_fetch_array($tampil);
+        if ($data) {
+            //jika data ditemukan, maka data ditampung ke dalam variabel
+            $vwaktu_pemesanan = $data['waktu_pemesanan'];
+            $vharga_layanan = $data['harga_layanan'];
+        }
+    } else if ($_GET['hal'] == "hapus") {
+        //persiapan hapus data
+        $hapus = mysqli_query($koneksi, "DELETE FROM paketbadalhaji WHERE id_paketbadalhaji = '$_GET[id]' ");
+        if ($hapus) {
+            echo "<script>
+            alert('hapus data sukses!');
+            document.location='edit.php'
+            </script>";
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +84,9 @@
   <link href="assets/img/logo/redhotours-black.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -44,7 +116,8 @@
       <div class="logo">
         <!-- <h1 class="text-light"><a href="index.html"><span>Yean Beauty</span></a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt="" class="img-fluid"></a>
+        <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt=""
+            class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -52,8 +125,8 @@
           <li><a class="nav-link scrollto" href="index.html">BERANDA</a></li>
           <li><a class="nav-link scrollto" href="paket-haji.html">PAKET HAJI</a></li>
           <li><a class="nav-link scrollto" href="paket-umrah.html">PAKET UMRAH</a></li>
-          <li><a class="nav-link scrollto" href="paket-badal-haji.html">BADAL HAJI</a></li>
-          <li><a class="nav-link scrollto active" href="paket-badal-umrah.html">BADAL UMRAH</a></li>
+          <li><a class="nav-link scrollto active" href="paket-badal-haji.html">BADAL HAJI</a></li>
+          <li><a class="nav-link scrollto" href="paket-badal-umrah.html">BADAL UMRAH</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -71,35 +144,27 @@
 
           <div class="col-lg-8  ">
             <div class="portfolio-info">
-              <h3>Pemesanan Badal Umrah</h3>
+              <h3>Pemesanan Badal Haji</h3>
 
               <ul>
 
-                <?php
-                $no = 1;
-                $tampil = mysqli_query($koneksi, "SELECT * from paketbadalumrah order by id_paketbadalumrah desc");
-                while ($data = mysqli_fetch_array($tampil)) :
-                ?>
+                <label><strong>Waktu Pemesanan</strong></label>
+                <input class="form-control" type="text" value="10 Januari 2024, 22:10:31"
+                  aria-label="Disabled input example" disabled readonly>
 
+                <label><strong>Harga Layanan</strong></label>
+                <input class="form-control" type="text" value="IDR 3.999.000,00 / Pax"
+                  aria-label="Disabled input example" disabled readonly>
 
-                  <label><strong>Waktu Pemesanan</strong></label>
-                  <input class="form-control" type="text" value="<?= date ('d/m/Y', strtotime($data['waktu_pemesanan'])) ?>" aria-label="Disabled input example" disabled readonly>
+                <label><strong>Jumlah Jamaah</strong></label>
+                <input class="form-control" required="" min="1" name="jumlah_jamaah" type="number" value="1"
+                  placeholder="Jumlah Jamaah" autocomplete="off">
 
-                  <label><strong>Harga Layanan</strong></label>
-                  <input class="form-control" type="text" value="IDR <?= $data['harga_layanan'] ?> / Pax" aria-label="Disabled input example" disabled readonly>
-
-                  <label><strong>Jumlah Jamaah</strong></label>
-                  <input class="form-control" required="" min="1" name="jumlah_jamaah" type="number" value="1" placeholder="Jumlah Jamaah" autocomplete="off">
-
-                  <label><strong>Deskripsi Layanan</strong></label>
-
-                  <div style="max-height: 500px;" class="box-keterangan-scroll">
-                    <p>Badal Umrah dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
-                  </div>
-
-
-                <?php endwhile; //penutup perulangan while 
-                ?>
+                <label><strong>Deskripsi Layanan</strong></label>
+                  
+                <div style="max-height: 500px;" class="box-keterangan-scroll">
+                  <p>Badal Haji dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
+              </div>
 
                 <label><strong></strong></label>
 
@@ -111,13 +176,13 @@
             </div>
           </div>
 
-
+          
 
           <div class="col-lg-4">
             <div class="portfolio-info">
               <h3>Syarat & Ketentuan</h3>
               <ul>
-                <li><strong>Kelayakan Peserta</strong> Badal Umrah haruslah merupakan individu yang telah mengikuti
+                <li><strong>Kelayakan Peserta</strong> Badal Haji haruslah merupakan individu yang telah mengikuti
                   perjalanan umrah sebelumnya dan memiliki keinginan untuk memberikan peluang serupa kepada orang lain.
                 </li>
                 <li><strong>Dokumen Dukungan</strong>
@@ -198,7 +263,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
