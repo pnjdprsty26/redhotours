@@ -164,7 +164,7 @@ if (isset($_GET['hal'])) {
                   <label><strong>Deskripsi Layanan</strong></label>
 
                   <div style="max-height: 500px;" class="box-keterangan-scroll">
-                    <p>Badal Haji dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
+                    <p>Badal Umrah dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
                   </div>
 
 
@@ -187,7 +187,7 @@ if (isset($_GET['hal'])) {
             <div class="portfolio-info">
               <h3>Syarat & Ketentuan</h3>
               <ul>
-                <li><strong>Kelayakan Peserta</strong> Badal Haji haruslah merupakan individu yang telah mengikuti
+                <li><strong>Kelayakan Peserta</strong> Badal Umrah haruslah merupakan individu yang telah mengikuti
                   perjalanan umrah sebelumnya dan memiliki keinginan untuk memberikan peluang serupa kepada orang lain.
                 </li>
                 <li><strong>Dokumen Dukungan</strong>
