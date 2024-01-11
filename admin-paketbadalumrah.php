@@ -146,7 +146,7 @@ if (isset($_GET['hal'])) {
                     <div class="container">
                         <div class="card">
                             <div class="card-header bg-success text-white">
-                                Daftar Mahasiswa
+                                Data Paket Badal Umrah
                             </div>
                             <div class="card-body">
 
