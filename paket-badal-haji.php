@@ -122,8 +122,8 @@ if (isset($_GET['hal'])) {
           <li><a class="nav-link scrollto" href="index.html">BERANDA</a></li>
           <li><a class="nav-link scrollto" href="paket-haji.html">PAKET HAJI</a></li>
           <li><a class="nav-link scrollto" href="paket-umrah.html">PAKET UMRAH</a></li>
-          <li><a class="nav-link scrollto active" href="paket-badal-haji.php">BADAL HAJI</a></li>
-          <li><a class="nav-link scrollto" href="paket-badal-umrah.php">BADAL UMRAH</a></li>
+          <li><a class="nav-link scrollto" href="paket-badal-haji.php">BADAL HAJI</a></li>
+          <li><a class="nav-link scrollto active" href="paket-badal-umrah.php">BADAL UMRAH</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -141,7 +141,7 @@ if (isset($_GET['hal'])) {
 
           <div class="col-lg-8  ">
             <div class="portfolio-info">
-              <h3>Pemesanan Badal Haji</h3>
+              <h3>Pemesanan Badal Umrah</h3>
 
               <ul>
 
@@ -164,7 +164,7 @@ if (isset($_GET['hal'])) {
                   <label><strong>Deskripsi Layanan</strong></label>
 
                   <div style="max-height: 500px;" class="box-keterangan-scroll">
-                    <p>Badal Haji dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
+                    <p>Badal Umrah dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
                   </div>
 
 
@@ -187,7 +187,7 @@ if (isset($_GET['hal'])) {
             <div class="portfolio-info">
               <h3>Syarat & Ketentuan</h3>
               <ul>
-                <li><strong>Kelayakan Peserta</strong> Badal Haji haruslah merupakan individu yang telah mengikuti
+                <li><strong>Kelayakan Peserta</strong> Badal Umrah haruslah merupakan individu yang telah mengikuti
                   perjalanan umrah sebelumnya dan memiliki keinginan untuk memberikan peluang serupa kepada orang lain.
                 </li>
                 <li><strong>Dokumen Dukungan</strong>
