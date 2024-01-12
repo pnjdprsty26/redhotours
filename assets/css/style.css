@@ -46,7 +46,6 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background: #cea73a;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -60,8 +59,6 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #21dfc2;
-  color: #fff;
 }
 
 .back-to-top.active {

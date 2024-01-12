@@ -848,28 +848,27 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <label for="namap">Nama</label>
-                  <input type="text" name="name" class="form-control" id="namap" placeholder="Your Name" required>
+                  <label for="nama">Nama:</label>
+                  <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Anda" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label for="emailp">Email</label>
-                  <input type="email" class="form-control" name="emailp" id="email" placeholder="Your Email" required>
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email Anda" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <label for="nowap">No Whatsapp</label>
-                <input type="text" class="form-control" name="nowap" id="subject" placeholder="Subject" required>
+                <label for="noHp">Nomor WhatsApp:</label>
+                <input type="tel" class="form-control" id="noHp" name="noHp" placeholder="Nomor WhatsApp Anda" required>
               </div>
               <div class="form-group mt-3">
-                <label for="pesanp">Pesan</label>
-                <textarea class="form-control" name="message" rows="8" required></textarea>
+                <label for="pesan">Isi Pesan:</label>
+                <textarea class="form-control" id="pesan" name="pesan" placeholder="Isi Pesan Anda..." rows="4"
+                  required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+              <div class="text-center"><button type="submit" onclick="generateWhatsAppLink()">Send Message</button>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              </div>
             </form>
           </div>
 
@@ -927,8 +926,10 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="https://wa.me/628989290147?text=Assalamualaikum,%20%0ARedho%20Tours%20and%20Travel,%20saya%20tertarik%20untuk%20memesan%20layanan%20Haji%20dan%20Umroh.%20%0AMohon%20informasi%20lebih%20lanjut%20mengenai%20paket,%20jadwal,%20dan%20biaya.%20Terima%20kasih!"
+  class="back-to-top d-flex align-items-center justify-content-center">
+   <img src="assets/img/ico/whatsapp.png" alt="WhatsApp Icon" style="width: 45px; height: 45px;">
+</a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -941,6 +942,21 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function generateWhatsAppLink() {
+      var nama = document.getElementById('nama').value;
+      var noHp = document.getElementById('noHp').value;
+      var email = document.getElementById('email').value;
+      var pesan = document.getElementById('pesan').value;
+
+      var whatsappMessage = "Assalamualaikum Nama saya " + nama + "\nNo WA: " + noHp + "\nEmail: " + email + "\n\n" + pesan;
+
+      var whatsappLink = "https://wa.me/628989290147?text=" + encodeURIComponent(whatsappMessage);
+
+      window.location.href = whatsappLink;
+    }
+  </script>
+
 
 </body>
 
