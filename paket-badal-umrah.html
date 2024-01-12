@@ -14,7 +14,9 @@
   <link href="assets/img/logo/redhotours-black.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -44,7 +46,8 @@
       <div class="logo">
         <!-- <h1 class="text-light"><a href="index.html"><span>Yean Beauty</span></a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt="" class="img-fluid"></a>
+        <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt=""
+            class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -75,26 +78,34 @@
 
               <ul>
 
-                  <label><strong>Waktu Pemesanan</strong></label>
-                  <input class="form-control" type="text" value="01/01/2025" aria-label="Disabled input example" disabled readonly>
+                <label><strong>Nama</strong></label>
+                <input class="form-control" id="namape" name="namape" value="">
 
-                  <label><strong>Harga Layanan</strong></label>
-                  <input class="form-control" type="text" value="IDR 25.000.000 / Pax" aria-label="Disabled input example" disabled readonly>
+                <label><strong>No Telp</strong></label>
+                <input class="form-control" id="nowa" name="nowa" value="">
 
-                  <label><strong>Jumlah Jamaah</strong></label>
-                  <input class="form-control" required="" min="1" name="jumlah_jamaah" type="number" value="1" placeholder="Jumlah Jamaah" autocomplete="off">
+                <label><strong>Waktu Pemesanan</strong></label>
+                <input class="form-control" id="nama" name="nama" value="01/01/2025" aria-label="Disabled input example"
+                  disabled readonly>
 
-                  <label><strong>Deskripsi Layanan</strong></label>
+                <label><strong>Harga Layanan</strong></label>
+                <input class="form-control" id="email" name="email" type="text" value="IDR 50.000.000 / Pax"
+                  aria-label="Disabled input example" disabled readonly>
 
-                  <div style="max-height: 500px;" class="box-keterangan-scroll">
-                    <p>Badal Umrah dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
-                  </div>
+                <label><strong>Jumlah Jamaah</strong></label>
+                <input class="form-control" id="noHp" name="noHp" required="" min="1" name="jumlah_jamaah" type="number"
+                  value="1" placeholder="Jumlah Jamaah" autocomplete="off">
 
+                <label><strong>Deskripsi Layanan</strong></label>
+
+                <div style="max-height: 500px;" class="box-keterangan-scroll">
+                  <p>Badal Haji dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
+                </div>
 
                 <label><strong></strong></label>
 
                 <div>
-                  <button type="button" class="btn">Pesan Sekarang</button>
+                  <button type="button" class="btn" onclick="generateWhatsAppLink()">Pesan Sekarang</button>
                 </div>
               </ul>
 
@@ -188,7 +199,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -201,6 +213,21 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function generateWhatsAppLink() {
+      var namape = document.getElementById('namape').value;
+      var nowa = document.getElementById('nowa').value;
+      var nama = document.getElementById('nama').value;
+      var noHp = document.getElementById('noHp').value;
+      var email = document.getElementById('email').value;
+
+      var whatsappMessage = "Assalamualaikum,\n\nNama saya " + namape + "\nNomer telpon saya " + nowa + "\n\nDengan rasa senang dan penuh harap, saya ingin mengonfirmasi pemesanan perjalanan saya dengan Redho Tours and Travel pada tanggal " + nama + "\n\nDetail Pemesanan: \n\nJenis Layanan: *Badal Umrah* \nHarga Layanan: " + email + "\nJumlah Jamaah: " + noHp + " Orang\n\nMohon arahan lebih lanjut dari tim yang terhormat. \nTerima kasih atas perhatian dan layanan yang diberikan. \n\nWassalamualaikum,";
+
+      var whatsappLink = "https://wa.me/628989290147?text=" + encodeURIComponent(whatsappMessage);
+
+      window.location.href = whatsappLink;
+    }
+  </script>
 
 </body>
 

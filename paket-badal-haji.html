@@ -71,18 +71,24 @@
 
           <div class="col-lg-8  ">
             <div class="portfolio-info">
-              <h3>Pemesanan Badal Umrah</h3>
+              <h3>Pemesanan Badal Haji</h3>
 
               <ul>
 
+                <label><strong>Nama</strong></label>
+                <input class="form-control" id="namape" name="namape" value="" >
+
+                <label><strong>No Telp</strong></label>
+                <input class="form-control" id="nowa" name="nowa" value="" >
+
                   <label><strong>Waktu Pemesanan</strong></label>
-                  <input class="form-control" type="text" value="01/01/2025" aria-label="Disabled input example" disabled readonly>
+                  <input class="form-control" id="nama" name="nama" value="01/01/2025" aria-label="Disabled input example" disabled readonly>
 
                   <label><strong>Harga Layanan</strong></label>
-                  <input class="form-control" type="text" value="IDR 50.000.000 / Pax" aria-label="Disabled input example" disabled readonly>
+                  <input class="form-control" id="email" name="email" type="text" value="IDR 50.000.000 / Pax" aria-label="Disabled input example" disabled readonly>
 
                   <label><strong>Jumlah Jamaah</strong></label>
-                  <input class="form-control" required="" min="1" name="jumlah_jamaah" type="number" value="1" placeholder="Jumlah Jamaah" autocomplete="off">
+                  <input class="form-control" id="noHp" name="noHp" required="" min="1" name="jumlah_jamaah" type="number" value="1" placeholder="Jumlah Jamaah" autocomplete="off">
 
                   <label><strong>Deskripsi Layanan</strong></label>
 
@@ -90,11 +96,10 @@
                     <p>Badal Haji dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
                   </div>
 
-
                 <label><strong></strong></label>
 
                 <div>
-                  <button type="button" class="btn">Pesan Sekarang</button>
+                  <button type="button" class="btn" onclick="generateWhatsAppLink()">Pesan Sekarang</button>
                 </div>
               </ul>
 
@@ -107,7 +112,7 @@
             <div class="portfolio-info">
               <h3>Syarat & Ketentuan</h3>
               <ul>
-                <li><strong>Kelayakan Peserta</strong> Badal Umrah haruslah merupakan individu yang telah mengikuti
+                <li><strong>Kelayakan Peserta</strong> Badal Haji haruslah merupakan individu yang telah mengikuti
                   perjalanan umrah sebelumnya dan memiliki keinginan untuk memberikan peluang serupa kepada orang lain.
                 </li>
                 <li><strong>Dokumen Dukungan</strong>
@@ -201,6 +206,21 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function generateWhatsAppLink() {
+      var namape = document.getElementById('namape').value;
+      var nowa = document.getElementById('nowa').value;
+      var nama = document.getElementById('nama').value;
+      var noHp = document.getElementById('noHp').value;
+      var email = document.getElementById('email').value;
+
+      var whatsappMessage = "Assalamualaikum,\n\nNama saya " + namape + "\nNomer telpon saya " + nowa + "\n\nDengan rasa senang dan penuh harap, saya ingin mengonfirmasi pemesanan perjalanan saya dengan Redho Tours and Travel pada tanggal " + nama + "\n\nDetail Pemesanan: \n\nJenis Layanan: *Badal Haji* \nHarga Layanan: " + email + "\nJumlah Jamaah: " + noHp + " Orang\n\nMohon arahan lebih lanjut dari tim yang terhormat. \nTerima kasih atas perhatian dan layanan yang diberikan. \n\nWassalamualaikum,";
+
+      var whatsappLink = "https://wa.me/628989290147?text=" + encodeURIComponent(whatsappMessage);
+
+      window.location.href = whatsappLink;
+    }
+  </script>
 
 </body>
 
