@@ -11,31 +11,37 @@ if (isset($_POST['bsimpan'])) {
     //uji apakah data akan di edit atau disimpan baru
     if ($_GET['hal'] == "edit") {
         //data akan diedit
-        $edit = mysqli_query($koneksi, " UPDATE paketbadalumrah set  
-                                                waktu_pemesanan = '$_POST[twaktu_pemesanan]',
-                                                harga_layanan = '$_POST[tharga_layanan]'
-                                         WHERE id_paketbadalumrah = '$_GET[id]' ");
+        $edit = mysqli_query($koneksi, " UPDATE paketumrah set  
+                                                nama_paket = '$_POST[tnama_paket]',
+                                                tanggal_keberangkatan = '$_POST[ttanggal_keberangkatan]',
+                                                harga_paket = '$_POST[tharga_paket]',
+                                                hotel_madinah = '$_POST[thotel_madinah]',
+                                                hotel_makkah = '$_POST[thotel_makkah]'
+                                         WHERE id_paketumrah = '$_GET[id]' ");
         if ($edit) { //jika edit sukses
             echo "<script> alert('Perubahan data diterima!');
-                   document.location='admin-paketbadalumrah.php'
+            document.location='admin-paketumrah.php'
                   </script>";
         } else { //jika edit gagal
             echo "<script> alert('Perubahan data ditolak!');
-                   document.location='admin-paketbadalumrah.php'
+            document.location='admin-paketumrah.php'
                   </script>";
         }
     } else {
         //data akan disimpan baru
-        $simpan = mysqli_query($koneksi, " INSERT INTO paketbadalumrah (waktu_pemesanan, harga_layanan)
-                                                VALUES ('$_POST[twaktu_pemesanan]',
-                                                        '$_POST[tharga_layanan]') ");
+        $simpan = mysqli_query($koneksi, " INSERT INTO paketumrah (nama_paket, tanggal_keberangkatan, harga_paket, hotel_madinah, hotel_makkah)
+                                                VALUES ('$_POST[tnama_paket]',
+                                                        '$_POST[ttanggal_keberangkatan]',
+                                                        '$_POST[tharga_paket]',
+                                                        '$_POST[thotel_madinah]',
+                                                        '$_POST[thotel_makkah]') ");
         if ($simpan) { //jika simpan sukses
-            echo "<script> alert('Perubahan data diterima!');
-                   document.location='admin-paketbadalumrah.php'
+            echo "<script> alert('simpan data sukses!');
+                   document.location='admin-paketumrah.php'
                   </script>";
         } else {
-            echo "<script> alert('Perubahan data ditolak!');
-                   document.location='admin-paketbadalumrah.php'
+            echo "<script> alert('simpan data gagal!');
+                   document.location='admin-paketumrah.php'
                   </script>";
         }
     }
@@ -46,20 +52,23 @@ if (isset($_GET['hal'])) {
     //tampil data yang akan di edit
     if ($_GET['hal'] == "edit") {
         //tampilkan data yang akan di edit
-        $tampil = mysqli_query($koneksi, "SELECT * FROM paketbadalumrah WHERE id_paketbadalumrah = '$_GET[id]'");
+        $tampil = mysqli_query($koneksi, "SELECT * FROM paketumrah WHERE id_paketumrah = '$_GET[id]'");
         $data = mysqli_fetch_array($tampil);
         if ($data) {
             //jika data ditemukan, maka data ditampung ke dalam variabel
-            $vwaktu_pemesanan = $data['waktu_pemesanan'];
-            $vharga_layanan = $data['harga_layanan'];
+            $vnama_paket = $data['nama_paket'];
+            $vtanggal_keberangkatan = $data['tanggal_keberangkatan'];
+            $vharga_paket = $data['harga_paket'];
+            $vhotel_madinah = $data['hotel_madinah'];
+            $vhotel_makkah = $data['hotel_makkah'];
         }
     } else if ($_GET['hal'] == "hapus") {
         //persiapan hapus data
-        $hapus = mysqli_query($koneksi, "DELETE FROM paketbadalumrah WHERE id_paketbadalumrah = '$_GET[id]' ");
+        $hapus = mysqli_query($koneksi, "DELETE FROM paketumrah WHERE id_paketumrah = '$_GET[id]' ");
         if ($hapus) {
             echo "<script>
             alert('hapus data sukses!');
-            document.location='edit.php'
+            document.location='admin-paketumrah.php'
             </script>";
         }
     }
@@ -100,7 +109,9 @@ if (isset($_GET['hal'])) {
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="admin-paketbadalhaji.php">Form Paket Badal Haji</a>
-                        <a class="collapse-item active" href="admin-paketbadalumrah.php">Form Paket Badal Umrah</a>
+                        <a class="collapse-item" href="admin-paketumrah.php">Form Paket Badal Umrah</a>
+                        <a class="collapse-item active" href="admin-paketumrah.php">Form Paket Umrah</a>
+
 
                     </div>
                 </div>
@@ -118,20 +129,42 @@ if (isset($_GET['hal'])) {
                     <div class="container">
                         <div class="card">
                             <div class="card-header bg-primary text-white">
-                                Form Paket Badal Haji
+                                Form Paket Umrah
                             </div>
                             <div class="card-body">
                                 <form method="post" action="">
+                                    
+
                                     <div class="from-group">
-                                        <label>Waktu Pemesanan (Tahun/Bulan/Tanggal)</label>
-                                        <input type="text" name="twaktu_pemesanan" value="<?= @$vwaktu_pemesanan ?>" class="form-control" placeholder="-- Waktu pemesanan --" required="">
+                                        <label>Nama Paket</label>
+                                        <input type="text" name="tnama_paket" value="<?= @$vnama_paket ?>" class="form-control" placeholder="-- Nama Paket --" required="">
                                         </input>
                                     </div>
+                                    
                                     <div class="from-group">
-                                        <label>Harga Layanan</label>
-                                        <input type="text" name="tharga_layanan" value="<?= @$vharga_layanan ?>" class="form-control" placeholder="-- Harga Layanan --" required="">
+                                        <label>Tanggal keberangkatan</label>
+                                        <input type="text" name="ttanggal_keberangkatan" value="<?= @$vtanggal_keberangkatan ?>" class="form-control" placeholder="-- Tanggal keberangkatan --" required="">
                                         </input>
                                     </div>
+
+                                    <div class="from-group">
+                                        <label>Harga paket</label>
+                                        <input type="text" name="tharga_paket" value="<?= @$vharga_paket ?>" class="form-control" placeholder="-- Harga paket --" required="">
+                                        </input>
+                                    </div>
+
+                                    <div class="from-group">
+                                        <label>Hotel Madinah</label>
+                                        <input type="text" name="thotel_madinah" value="<?= @$vhotel_madinah ?>" class="form-control" placeholder="-- Hotel Madinah --" required="">
+                                        </input>
+                                    </div>
+
+                                    <div class="from-group">
+                                        <label>Hotel makkah</label>
+                                        <input type="text" name="thotel_makkah" value="<?= @$vhotel_makkah ?>" class="form-control" placeholder="-- Hotel makkah --" required="">
+                                        </input>
+                                    </div>
+
                                     <br>
                                     <button type="submit" class="btn btn-success" name="bsimpan">Simpan</button>
                                     <button type="reset" class="btn btn-danger" name="breset">Kosongkan</button>
@@ -145,28 +178,39 @@ if (isset($_GET['hal'])) {
                     <div class="container">
                         <div class="card">
                             <div class="card-header bg-success text-white">
-                                Data Paket Badal Umrah
+                                Data Paket Umrah
                             </div>
                             <div class="card-body">
 
                                 <table class="table table-bordered table-striped">
                                     <tr>
                                         <th>No.</th>
-                                        <th>Waktu Pemesanan (Tahun/Bulan/Tanggal)</th>
-                                        <th>Harga Layanan</th>
+                                        <th>Nama Paket</th>
+                                        <th>Tanggal keberangkatan</th>
+                                        <th>Harga paket</th>
+                                        <th>Hotel madinah</th>
+                                        <th>Hotel makkah</th>
+
                                         <th>Menu</th>
                                     </tr>
                                     <?php
                                     $no = 1;
-                                    $tampil = mysqli_query($koneksi, "SELECT * from paketbadalumrah order by id_paketbadalumrah desc");
+                                    $tampil = mysqli_query($koneksi, "SELECT * from paketumrah order by id_paketumrah desc");
+                                    // $tampil = mysqli_query($koneksi, "SELECT * FROM paketumrah WHERE id_paketumrah = 1 ORDER BY id_paketumrah DESC");
+
                                     while ($data = mysqli_fetch_array($tampil)) :
                                     ?>
                                         <tr>
+
                                             <td><?= $no++ ?></td>
-                                            <td><?= $data['waktu_pemesanan'] ?></td>
-                                            <td><?= $data['harga_layanan'] ?></td>
+                                            <td><?= $data['nama_paket'] ?></td>
+                                            <td><?= $data['tanggal_keberangkatan'] ?></td>
+                                            <td><?= $data['harga_paket'] ?></td>
+                                            <td><?= $data['hotel_madinah'] ?></td>
+                                            <td><?= $data['hotel_makkah'] ?></td>
                                             <td>
-                                                <a href="admin-paketbadalumrah.php?hal=edit&id=<?= $data['id_paketbadalumrah'] ?>" class="btn btn-warning"> Edit</a>
+                                                <a href="admin-paketumrah.php?hal=edit&id=<?= $data['id_paketumrah'] ?>" class="btn btn-warning"> Edit</a>
+                                                <a href="admin-paketumrah.php?hal=hapus&id=<?= $data['id_paketumrah'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" class="btn btn-danger"> Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endwhile; //penutup perulangan while 
@@ -178,6 +222,9 @@ if (isset($_GET['hal'])) {
                     </div>
                     <!-- Akhir Card Tabel-->
 
+                    
+                    
+                    
 
                 </div>
             </div>
@@ -187,8 +234,9 @@ if (isset($_GET['hal'])) {
     </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="admin/vendor/jquery/jquery.min.js"></script>
-    <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
