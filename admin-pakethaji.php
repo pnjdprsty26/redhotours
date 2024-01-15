@@ -11,25 +11,25 @@ if (isset($_POST['bsimpan'])) {
     //uji apakah data akan di edit atau disimpan baru
     if ($_GET['hal'] == "edit") {
         //data akan diedit
-        $edit = mysqli_query($koneksi, " UPDATE paketumrah set  
+        $edit = mysqli_query($koneksi, " UPDATE pakethaji set  
                                                 nama_paket = '$_POST[tnama_paket]',
                                                 tanggal_keberangkatan = '$_POST[ttanggal_keberangkatan]',
                                                 harga_paket = '$_POST[tharga_paket]',
                                                 hotel_madinah = '$_POST[thotel_madinah]',
                                                 hotel_makkah = '$_POST[thotel_makkah]'
-                                         WHERE id_paketumrah = '$_GET[id]' ");
+                                         WHERE id_pakethaji = '$_GET[id]' ");
         if ($edit) { //jika edit sukses
             echo "<script> alert('Perubahan data diterima!');
-            document.location='admin-paketumrah.php'
+            document.location='admin-pakethaji.php'
                   </script>";
         } else { //jika edit gagal
             echo "<script> alert('Perubahan data ditolak!');
-            document.location='admin-paketumrah.php'
+            document.location='admin-pakethaji.php'
                   </script>";
         }
     } else {
         //data akan disimpan baru
-        $simpan = mysqli_query($koneksi, " INSERT INTO paketumrah (nama_paket, tanggal_keberangkatan, harga_paket, hotel_madinah, hotel_makkah)
+        $simpan = mysqli_query($koneksi, " INSERT INTO pakethaji (nama_paket, tanggal_keberangkatan, harga_paket, hotel_madinah, hotel_makkah)
                                                 VALUES ('$_POST[tnama_paket]',
                                                         '$_POST[ttanggal_keberangkatan]',
                                                         '$_POST[tharga_paket]',
@@ -37,11 +37,11 @@ if (isset($_POST['bsimpan'])) {
                                                         '$_POST[thotel_makkah]') ");
         if ($simpan) { //jika simpan sukses
             echo "<script> alert('simpan data sukses!');
-                   document.location='admin-paketumrah.php'
+                   document.location='admin-pakethaji.php'
                   </script>";
         } else {
             echo "<script> alert('simpan data gagal!');
-                   document.location='admin-paketumrah.php'
+                   document.location='admin-pakethaji.php'
                   </script>";
         }
     }
@@ -52,7 +52,7 @@ if (isset($_GET['hal'])) {
     //tampil data yang akan di edit
     if ($_GET['hal'] == "edit") {
         //tampilkan data yang akan di edit
-        $tampil = mysqli_query($koneksi, "SELECT * FROM paketumrah WHERE id_paketumrah = '$_GET[id]'");
+        $tampil = mysqli_query($koneksi, "SELECT * FROM pakethaji WHERE id_pakethaji = '$_GET[id]'");
         $data = mysqli_fetch_array($tampil);
         if ($data) {
             //jika data ditemukan, maka data ditampung ke dalam variabel
@@ -64,11 +64,11 @@ if (isset($_GET['hal'])) {
         }
     } else if ($_GET['hal'] == "hapus") {
         //persiapan hapus data
-        $hapus = mysqli_query($koneksi, "DELETE FROM paketumrah WHERE id_paketumrah = '$_GET[id]' ");
+        $hapus = mysqli_query($koneksi, "DELETE FROM pakethaji WHERE id_pakethaji = '$_GET[id]' ");
         if ($hapus) {
             echo "<script>
             alert('hapus data sukses!');
-            document.location='admin-paketumrah.php'
+            document.location='admin-pakethaji.php'
             </script>";
         }
     }
@@ -110,8 +110,8 @@ if (isset($_GET['hal'])) {
                     <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="admin-paketbadalhaji.php">Form Paket Badal Haji</a>
                         <a class="collapse-item" href="admin-paketbadalumrah.php">Form Paket Badal Umrah</a>
-                        <a class="collapse-item" href="admin-pakethaji.php">Form Paket Haji</a>
-                        <a class="collapse-item active" href="admin-paketumrah.php">Form Paket Umrah</a>
+                        <a class="collapse-item active" href="admin-pakethaji.php">Form Paket Haji</a>
+                        <a class="collapse-item" href="admin-pakethaji.php">Form Paket Umrah</a>
 
                     </div>
                 </div>
@@ -129,7 +129,7 @@ if (isset($_GET['hal'])) {
                     <div class="container">
                         <div class="card">
                             <div class="card-header bg-primary text-white">
-                                Form Paket Umrah
+                                Form Paket Haji
                             </div>
                             <div class="card-body">
                                 <form method="post" action="">
@@ -178,7 +178,7 @@ if (isset($_GET['hal'])) {
                     <div class="container">
                         <div class="card">
                             <div class="card-header bg-success text-white">
-                                Data Paket Umrah
+                                Data Paket Haji
                             </div>
                             <div class="card-body">
 
@@ -195,8 +195,8 @@ if (isset($_GET['hal'])) {
                                     </tr>
                                     <?php
                                     $no = 1;
-                                    $tampil = mysqli_query($koneksi, "SELECT * from paketumrah order by id_paketumrah desc");
-                                    // $tampil = mysqli_query($koneksi, "SELECT * FROM paketumrah WHERE id_paketumrah = 1 ORDER BY id_paketumrah DESC");
+                                    $tampil = mysqli_query($koneksi, "SELECT * from pakethaji order by id_pakethaji desc");
+                                    // $tampil = mysqli_query($koneksi, "SELECT * FROM pakethaji WHERE id_pakethaji = 1 ORDER BY id_pakethaji DESC");
 
                                     while ($data = mysqli_fetch_array($tampil)) :
                                     ?>
@@ -209,8 +209,8 @@ if (isset($_GET['hal'])) {
                                             <td><?= $data['hotel_madinah'] ?></td>
                                             <td><?= $data['hotel_makkah'] ?></td>
                                             <td>
-                                                <a href="admin-paketumrah.php?hal=edit&id=<?= $data['id_paketumrah'] ?>" class="btn btn-warning"> Edit</a>
-                                                <a href="admin-paketumrah.php?hal=hapus&id=<?= $data['id_paketumrah'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" class="btn btn-danger"> Hapus</a>
+                                                <a href="admin-pakethaji.php?hal=edit&id=<?= $data['id_pakethaji'] ?>" class="btn btn-warning"> Edit</a>
+                                                <a href="admin-pakethaji.php?hal=hapus&id=<?= $data['id_pakethaji'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" class="btn btn-danger"> Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endwhile; //penutup perulangan while 

@@ -99,9 +99,10 @@ if (isset($_GET['hal'])) {
                 </a>
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="admin-paketbadalhaji.php">Form Paket Badal Haji</a>
+                    <a class="collapse-item" href="admin-paketbadalhaji.php">Form Paket Badal Haji</a>
                         <a class="collapse-item active" href="admin-paketbadalumrah.php">Form Paket Badal Umrah</a>
-
+                        <a class="collapse-item" href="admin-pakethaji.php">Form Paket Haji</a>
+                        <a class="collapse-item" href="admin-paketumrah.php">Form Paket Umrah</a>
                     </div>
                 </div>
             </li>

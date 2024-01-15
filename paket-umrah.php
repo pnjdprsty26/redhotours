@@ -99,7 +99,7 @@ if (mysqli_connect_errno()) {
                                     <p class="card-text"><i class="bi bi-building-check"></i><?= $data['hotel_madinah'] ?></p>
                                     <p class="card-text"><i class="bi bi-building-check"></i><?= $data['hotel_makkah'] ?></p>
                                     <p class="card-text"><i class="bi bi-check-circle-fill "></i><?= $data['harga_paket'] ?></p>
-                                    <a href="package_details.php?id=<?= $data['id_paketumrah'] ?>" class="btn">Lihat Lebih Detail</a>   
+                                    <a href="paket-umrahdetail.php?id=<?= $data['id_paketumrah'] ?>" class="btn">Lihat Lebih Detail</a>   
                                 </div>
                             </div>
                         </div>
