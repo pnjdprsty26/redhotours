@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-  color: #2ae0c4;
+  color: #cea73a;
   text-decoration: none;
 }
 
@@ -688,7 +688,7 @@ section {
   font-weight: 600;
   display: block;
   margin-top: 20px;
-  color: #7c9995;
+  color: #000000;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   transition: ease-in-out 0.3s;
@@ -831,54 +831,58 @@ section {
 /*--------------------------------------------------------------
 # More Services
 --------------------------------------------------------------*/
+/* hr */
+.more-services hr {
+  border: none;
+  height: 1px;
+  color: #333; 
+  background-color: #333;
+}
+
+
+/* Menghilangkan border radius pada gambar */
 .more-services img {
   border-radius: 0;
 }
 
-.more-services .card-body p {
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 8px;
-  color: #222; /* Warna teks */
-}
-
-/* Gaya untuk ikon di dalam elemen <p> */
-.more-services .card-body p i {
-  margin-right: 3px;
-  color: #cea73a; /* Warna ikon */
-}
-
-
+/* Menghilangkan border dan mengatur teks ke tengah pada card */
 .more-services .card {
   border: 0;
   text-align: center;
 }
 
-
-.more-services .card-body {
-  -moz-text-align-last: left;
-  text-align-last: left;
-  font-size: 15px;
-  line-height: 1;
+/* Mengatur margin dan warna pada ikon dalam paragraf */
+.more-services .card-body p i {
+  margin-right: 3px;
+  color: #cea73a; /* Warna ikon */
 }
 
+/* Mengatur alinea teks ke kiri */
+.more-services .card-text {
+  text-align: left;
+}
+
+/* Mengatur gaya pada judul link */
 .more-services .card-title a {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   color: #334240;
   transition: ease-in-out 0.3s;
 }
 
+/* Mengubah warna judul link saat dihover */
 .more-services .card-title a:hover {
   color: #cea73a;
 }
 
+/* Mengatur gaya pada tombol */
 .more-services .btn {
   border-radius: 50px;
   padding: 4px 30px 6px 30px;
   border: 2px solid #cea73a;
 }
 
+/* Mengubah warna tombol saat dihover */
 .more-services .btn:hover {
   color: #fff;
   background: #cea73a;

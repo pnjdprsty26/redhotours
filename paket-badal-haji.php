@@ -120,8 +120,8 @@ if (isset($_GET['hal'])) {
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.html">BERANDA</a></li>
-          <li><a class="nav-link scrollto" href="paket-haji.html">PAKET HAJI</a></li>
-          <li><a class="nav-link scrollto" href="paket-umrah.html">PAKET UMRAH</a></li>
+          <li><a class="nav-link scrollto" href="paket-haji.php">PAKET HAJI</a></li>
+          <li><a class="nav-link scrollto" href="paket-umrah.php">PAKET UMRAH</a></li>
           <li><a class="nav-link scrollto active" href="paket-badal-haji.php">BADAL HAJI</a></li>
           <li><a class="nav-link scrollto" href="paket-badal-umrah.php">BADAL UMRAH</a></li>
         </ul>
