@@ -47,6 +47,20 @@ if (isset($_POST['bsimpan'])) {
     }
 }
 
+session_start();
+if (!isset($_SESSION["username"])) {
+    // Pengguna belum login, tampilkan notifikasi dan redirect ke halaman login
+    echo '<script>alert("Anda harus login terlebih dahulu!"); window.location.href = "admin-login.php";</script>';
+    exit();
+}
+
+// Proses logout jika tombol logout diklik
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
 //tombol edit
 if (isset($_GET['hal'])) {
     //tampil data yang akan di edit
@@ -93,7 +107,7 @@ if (isset($_GET['hal'])) {
 <body id="page-top">
     <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-dashboard.php">
                 <div class="sidebar-brand-text mx-3">ADMIN</div>
             </a>
             <hr class="sidebar-divider my-0">
@@ -111,7 +125,7 @@ if (isset($_GET['hal'])) {
                     <a class="collapse-item" href="admin-paketbadalhaji.php">Form Paket Badal Haji</a>
                         <a class="collapse-item" href="admin-paketbadalumrah.php">Form Paket Badal Umrah</a>
                         <a class="collapse-item active" href="admin-pakethaji.php">Form Paket Haji</a>
-                        <a class="collapse-item" href="admin-pakethaji.php">Form Paket Umrah</a>
+                        <a class="collapse-item" href="admin-paketumrah.php">Form Paket Umrah</a>
 
                     </div>
                 </div>
@@ -164,6 +178,7 @@ if (isset($_GET['hal'])) {
                                         <input type="text" name="thotel_makkah" value="<?= @$vhotel_makkah ?>" class="form-control" placeholder="-- Hotel makkah --" required="">
                                         </input>
                                     </div>
+
 
                                     <br>
                                     <button type="submit" class="btn btn-success" name="bsimpan">Simpan</button>

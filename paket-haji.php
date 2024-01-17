@@ -93,13 +93,13 @@ if (mysqli_connect_errno()) {
                                 <img src="assets/img/cta-22.jpg" class="card-img-top" alt="...">
 
                                 <div class="card-body">
-                                <h5 class="card-title"><a href=""><?= $data['nama_paket'] ?></a></h5>
-<hr>
+                                    <h5 class="card-title"><a href=""><?= $data['nama_paket'] ?></a></h5>
+                                    <hr>
                                     <p class="card-text"><i class="bi bi-calendar-check"></i><?= $data['tanggal_keberangkatan'] ?></p>
                                     <p class="card-text"><i class="bi bi-building-check"></i><?= $data['hotel_madinah'] ?></p>
                                     <p class="card-text"><i class="bi bi-building-check"></i><?= $data['hotel_makkah'] ?></p>
                                     <p class="card-text"><i class="bi bi-check-circle-fill "></i><?= $data['harga_paket'] ?></p>
-                                    <a href="paket-hajidetail.php?id=<?= $data['id_pakethaji'] ?>" class="btn">Lihat Lebih Detail</a>   
+                                    <a href="paket-hajidetail.php?id=<?= $data['id_pakethaji'] ?>" class="btn">Lihat Lebih Detail</a>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +164,10 @@ if (mysqli_connect_errno()) {
             </div>
         </footer><!-- End Footer -->
 
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <a href="https://wa.me/628989290147?text=Assalamualaikum,%20%0ARedho%20Tours%20and%20Travel,%20saya%20tertarik%20untuk%20memesan%20layanan%20Haji%20dan%20Umroh.%20%0AMohon%20informasi%20lebih%20lanjut%20mengenai%20paket,%20jadwal,%20dan%20biaya.%20Terima%20kasih!" class="back-to-top d-flex align-items-center justify-content-center">
+            <img src="assets/img/ico/whatsapp.png" alt="WhatsApp Icon" style="width: 45px; height: 45px;">
+        </a>
+
 
         <!-- Vendor JS Files -->
         <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

@@ -1,3 +1,19 @@
+<?php
+session_start();
+if (!isset($_SESSION["username"])) {
+    // Pengguna belum login, tampilkan notifikasi dan redirect ke halaman login
+    echo '<script>alert("Anda harus login terlebih dahulu!"); window.location.href = "admin-login.php";</script>';
+    exit();
+}
+
+// Proses logout jika tombol logout diklik
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
+    session_destroy();
+    header("Location: admin-login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +27,19 @@
     <link href="admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <script>
+        // Menambahkan script JavaScript untuk menangani notifikasi
+        function showNotification() {
+            alert("Anda harus login terlebih dahulu!");
+            window.location.href = "admin-login.php";
+        }
+    </script>
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-dashboard.php">
                 <div class="sidebar-brand-text mx-3">ADMIN</div>
             </a>
             <hr class="sidebar-divider my-0">
@@ -32,7 +55,9 @@
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item active" href="admin-paketbadalhaji.php">Form Paket Badal Haji</a>
-                        <a class="collapse-item active" href="admin-paketbadalumrah.php">Form Paket Badal Umrah</a>
+                        <a class="collapse-item" href="admin-paketbadalumrah.php">Form Paket Badal Umrah</a>
+                        <a class="collapse-item" href="admin-pakethaji.php">Form Paket Haji</a>
+                        <a class="collapse-item" href="admin-paketumrah.php">Form Paket Umrah</a>
 
                     </div>
                 </div>
@@ -43,6 +68,7 @@
             <div id="content">
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <!-- ... (kode header) -->
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -58,9 +84,6 @@
             </div>
 
         </div>
-        <!-- /.container-fluid -->
-    </div>
-    </div>
     </div>
     <!-- Bootstrap core JavaScript-->
     <script src="admin/vendor/jquery/jquery.min.js"></script>

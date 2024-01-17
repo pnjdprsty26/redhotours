@@ -65,6 +65,20 @@ if (isset($_GET['hal'])) {
     }
 }
 
+session_start();
+if (!isset($_SESSION["username"])) {
+    // Pengguna belum login, tampilkan notifikasi dan redirect ke halaman login
+    echo '<script>alert("Anda harus login terlebih dahulu!"); window.location.href = "admin-login.php";</script>';
+    exit();
+}
+
+// Proses logout jika tombol logout diklik
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +98,7 @@ if (isset($_GET['hal'])) {
 <body id="page-top">
     <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-dashboard.php">
                 <div class="sidebar-brand-text mx-3">ADMIN</div>
             </a>
             <hr class="sidebar-divider my-0">

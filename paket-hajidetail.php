@@ -14,10 +14,11 @@ if (isset($_GET['id'])) {
   $package_data = mysqli_fetch_array($query);
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -48,33 +49,33 @@ if (isset($_GET['id'])) {
   * Author: Panji adi Prasetyo.com
   ======================================================== -->
 
-</head>
+  </head>
 
   <body>
 
 
     <!-- ======= Header ======= -->
     <header id="header" class="d-flex align-items-center">
-        <div class="container d-flex align-items-center justify-content-between">
+      <div class="container d-flex align-items-center justify-content-between">
 
-            <div class="logo">
-                <!-- <h1 class="text-light"><a href="index.html"><span>Yean Beauty</span></a></h1> -->
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt="" class="img-fluid"></a>
-            </div>
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto" href="index.html">BERANDA</a></li>
-                    <li><a class="nav-link scrollto" href="paket-haji.php">PAKET HAJI</a></li>
-                    <li><a class="nav-link scrollto active" href="paket-umrah.php">PAKET UMRAH</a></li>
-                    <li><a class="nav-link scrollto" href="paket-badal-haji.php">BADAL HAJI</a></li>
-                    <li><a class="nav-link scrollto" href="paket-badal-umrah.php">BADAL UMRAH</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
+        <div class="logo">
+          <!-- <h1 class="text-light"><a href="index.html"><span>Yean Beauty</span></a></h1> -->
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt="" class="img-fluid"></a>
         </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto" href="index.html">BERANDA</a></li>
+            <li><a class="nav-link scrollto" href="paket-haji.php">PAKET HAJI</a></li>
+            <li><a class="nav-link scrollto active" href="paket-umrah.php">PAKET UMRAH</a></li>
+            <li><a class="nav-link scrollto" href="paket-badal-haji.php">BADAL HAJI</a></li>
+            <li><a class="nav-link scrollto" href="paket-badal-umrah.php">BADAL UMRAH</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+      </div>
     </header><!-- End Header -->
 
     <main id="main">
@@ -121,7 +122,7 @@ if (isset($_GET['id'])) {
                   <label><strong></strong></label>
 
                   <div>
-                  <button type="button" class="btn" onclick="generateWhatsAppLink()">Pesan Sekarang</button>
+                    <button type="button" class="btn" onclick="generateWhatsAppLink()">Pesan Sekarang</button>
                   </div>
                 </ul>
 
@@ -191,7 +192,7 @@ if (isset($_GET['id'])) {
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Beranda</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang Kami</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Galeri</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="galeri.html">Galeri</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Team</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="faq.html">FAQ</a></li>
 
@@ -223,23 +224,22 @@ if (isset($_GET['id'])) {
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script>
-function generateWhatsAppLink() {
-  var namape = document.getElementById('namape').value;
-  var nowape = document.getElementById('nowape').value;
-  var nama_paket = document.getElementById('nama_paket').value;
-  var tanggal_keberangkatan = document.getElementById('tanggal_keberangkatan').value;
-  var hotel_madinah = document.getElementById('hotel_madinah').value;
-  var hotel_makkah = document.getElementById('hotel_makkah').value;
-  var harga_paket = document.getElementById('harga_paket').value;
-  var jumlah_jamaah = document.getElementById('jumlah_jamaah').value;
+      function generateWhatsAppLink() {
+        var namape = document.getElementById('namape').value;
+        var nowape = document.getElementById('nowape').value;
+        var nama_paket = document.getElementById('nama_paket').value;
+        var tanggal_keberangkatan = document.getElementById('tanggal_keberangkatan').value;
+        var hotel_madinah = document.getElementById('hotel_madinah').value;
+        var hotel_makkah = document.getElementById('hotel_makkah').value;
+        var harga_paket = document.getElementById('harga_paket').value;
+        var jumlah_jamaah = document.getElementById('jumlah_jamaah').value;
 
-  var whatsappMessage = "Assalamualaikum,\n\nNama Saya " + namape + "\nNo Telp Saya " + nowape + "\n\nSaya ingin melakukan pemesanan paket umrah dengan rincian sebagai berikut:\n\n- Nama Paket Umrah: " + nama_paket + "\n- Tanggal Keberangkatan: " + tanggal_keberangkatan + "\n- Akomodasi Hotel Madinah: " + hotel_madinah + "\n- Akomodasi Hotel Makkah: " + hotel_makkah + "\n- Harga Layanan: " + harga_paket + "\n- Jumlah Jamaah: " + jumlah_jamaah + "\n\nSaya sangat berharap dapat segera mendapatkan informasi lebih lanjut terkait proses pemesanan dan detail pembayaran.\n\nWaalaikumsalam.";
+        var whatsappMessage = "Assalamualaikum,\n\nNama Saya " + namape + "\nNo Telp Saya " + nowape + "\n\nSaya ingin melakukan pemesanan paket umrah dengan rincian sebagai berikut:\n\n- Nama Paket Umrah: " + nama_paket + "\n- Tanggal Keberangkatan: " + tanggal_keberangkatan + "\n- Akomodasi Hotel Madinah: " + hotel_madinah + "\n- Akomodasi Hotel Makkah: " + hotel_makkah + "\n- Harga Layanan: " + harga_paket + "\n- Jumlah Jamaah: " + jumlah_jamaah + "\n\nSaya sangat berharap dapat segera mendapatkan informasi lebih lanjut terkait proses pemesanan dan detail pembayaran.\n\nWaalaikumsalam.";
 
-  var whatsappLink = "https://wa.me/628989290147?text=" + encodeURIComponent(whatsappMessage);
+        var whatsappLink = "https://wa.me/628989290147?text=" + encodeURIComponent(whatsappMessage);
 
-  window.location.href = whatsappLink;
-}
-
+        window.location.href = whatsappLink;
+      }
     </script>
   </body>
 

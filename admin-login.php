@@ -1,3 +1,50 @@
+<?php
+// Koneksi ke database
+$koneksi = mysqli_connect("localhost", "root", "", "redhotoursdb");
+
+// Periksa koneksi
+if (mysqli_connect_errno()) {
+    die("Koneksi database gagal: " . mysqli_connect_error());
+}
+
+// Fungsi untuk membersihkan input dari potensi ancaman SQL injection
+function cleanInput($input) {
+    global $koneksi;
+    return mysqli_real_escape_string($koneksi, $input);
+}
+
+// Inisialisasi variabel
+$username = "";
+$password = "";
+$pesanError = "";
+
+// Cek apakah form login telah disubmit
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Ambil data dari form
+    $username = cleanInput($_POST["username"]);
+    $password = cleanInput($_POST["password"]);
+
+    // Query untuk memeriksa keberadaan pengguna dengan username dan password yang sesuai
+    $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    $result = mysqli_query($koneksi, $query);
+
+    // Periksa apakah hasil query mengembalikan baris data
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Login berhasil
+        session_start();
+        $_SESSION["username"] = $username;
+        header("Location: admin-dashboard.php"); // Ganti dengan halaman tujuan setelah login berhasil
+        exit();
+    } else {
+        // Login gagal
+        $pesanError = "Username atau password salah.";
+    }
+}
+
+// Tutup koneksi database
+mysqli_close($koneksi);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +84,7 @@
 </head>
 
 <body>
+
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -75,114 +123,41 @@
 
   <main id="main">
 
-    <!-- ======= Our Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container-fluid">
+    <section class="ctalogin">
 
-        <div class="section-title">
-          <h2>GALERI PERJALANAN JAMAAH UMROH DAN HAJI</h2>
-          <!-- <p><strong></strong></p> -->
+      <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required value="<?php echo htmlspecialchars($username); ?>">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <button class="cta-btn" type="submit">Login</button>
+            </form>
+            <?php
+            // Tampilkan pesan error jika login gagal
+            if ($pesanError !== "") {
+                echo '<div class="alert alert-danger mt-3" role="alert">' . $pesanError . '</div>';
+            }
+            ?>
+          </div>
         </div>
-
-        <div class="row g-3">
-
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  class="portfolio-lightbox" title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/gallery/gallery9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/gallery/gallery9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+      </div>
+    </div>
+  </div>
 
       </div>
-    </section><!-- End Our Portfolio Section -->
+    </section>
 
-  </main><!-- End #main -->
+
+    
 
   <!-- ======= Footer ======= -->
   <footer id="footer">

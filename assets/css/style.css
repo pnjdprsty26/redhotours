@@ -1940,3 +1940,126 @@ element.style {
   font-size: 17px;
 }
 
+/*--------------------------------------------------------------
+# Cta
+--------------------------------------------------------------*/
+.ctalogin {
+  background: linear-gradient(rgba(66, 84, 81, 0.5), rgba(43, 56, 54, 0.5)), url("../img/slide/mekkah-3.jpg") fixed center center;
+  background-size: cover;
+  padding: 60px 0;
+  height: 100vh;
+}
+
+.ctalogin h3 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.ctalogin p {
+  font-size: 18px;
+  color: #fff;
+}
+
+.ctalogin .cta-btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #cea73a;
+  color: #000000;
+}
+
+.ctalogin .cta-btn:hover {
+  background: #cea73a;
+  border: 2px solid #cea73a;
+}
+
+
+element.style {
+  max-height: 500px;
+}
+
+/*--------------------------------------------------------------
+# tourleader
+--------------------------------------------------------------*/
+.tourleader .tourleader-carousel,
+.tourleader .tourleader-slider {
+  overflow: hidden;
+}
+
+.tourleader .testimonial-item {
+  box-sizing: content-box;
+  padding: 30px 30px 0 30px;
+  margin: 30px 15px;
+  text-align: center;
+  min-height: 350px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+.tourleader .testimonial-item .testimonial-img {
+  width: 320px;
+  border-radius: 0%;
+  border: 0px solid #fff;
+  margin: 0 auto;
+}
+
+.tourleader .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #111;
+}
+
+.tourleader .testimonial-item h4 {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+.tourleader .testimonial-item .quote-icon-left,
+.tourleader .testimonial-item .quote-icon-right {
+  color: white;
+  font-size: 26px;
+}
+
+.tourleader .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.tourleader .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+.tourleader .testimonial-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+}
+
+.tourleader .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.tourleader .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #3b4ef8;
+}
+
+.tourleader .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #3b4ef8;
+}

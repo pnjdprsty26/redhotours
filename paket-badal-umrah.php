@@ -268,7 +268,10 @@ if (isset($_GET['hal'])) {
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="https://wa.me/628989290147?text=Assalamualaikum,%20%0ARedho%20Tours%20and%20Travel,%20saya%20tertarik%20untuk%20memesan%20layanan%20Haji%20dan%20Umroh.%20%0AMohon%20informasi%20lebih%20lanjut%20mengenai%20paket,%20jadwal,%20dan%20biaya.%20Terima%20kasih!"
+    class="back-to-top d-flex align-items-center justify-content-center">
+    <img src="assets/img/ico/whatsapp.png" alt="WhatsApp Icon" style="width: 45px; height: 45px;">
+  </a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
