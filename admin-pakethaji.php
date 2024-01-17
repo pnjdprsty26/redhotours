@@ -56,7 +56,13 @@ if (!isset($_SESSION["username"])) {
 
 // Proses logout jika tombol logout diklik
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
+    // Hapus semua data sesi
+    session_unset();
+    
+    // Hancurkan sesi
     session_destroy();
+    
+    // Redirect ke halaman login atau halaman lain yang sesuai
     header("Location: login.php");
     exit();
 }

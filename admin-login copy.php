@@ -1,3 +1,50 @@
+<?php
+// Koneksi ke database
+$koneksi = mysqli_connect("localhost", "root", "", "redhotoursdb");
+
+// Periksa koneksi
+if (mysqli_connect_errno()) {
+    die("Koneksi database gagal: " . mysqli_connect_error());
+}
+
+// Fungsi untuk membersihkan input dari potensi ancaman SQL injection
+function cleanInput($input) {
+    global $koneksi;
+    return mysqli_real_escape_string($koneksi, $input);
+}
+
+// Inisialisasi variabel
+$username = "";
+$password = "";
+$pesanError = "";
+
+// Cek apakah form login telah disubmit
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Ambil data dari form
+    $username = cleanInput($_POST["username"]);
+    $password = cleanInput($_POST["password"]);
+
+    // Query untuk memeriksa keberadaan pengguna dengan username dan password yang sesuai
+    $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    $result = mysqli_query($koneksi, $query);
+
+    // Periksa apakah hasil query mengembalikan baris data
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Login berhasil
+        session_start();
+        $_SESSION["username"] = $username;
+        header("Location: admin-dashboard.php"); // Ganti dengan halaman tujuan setelah login berhasil
+        exit();
+    } else {
+        // Login gagal
+        $pesanError = "Username atau password salah.";
+    }
+}
+
+// Tutup koneksi database
+mysqli_close($koneksi);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +85,6 @@
 
 <body>
 
-
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -52,11 +98,22 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="index.html">BERANDA</a></li>
-          <li><a class="nav-link scrollto" href="paket-haji.html">PAKET HAJI</a></li>
-          <li><a class="nav-link scrollto" href="paket-umrah.html">PAKET UMRAH</a></li>
-          <li><a class="nav-link scrollto active" href="paket-badal-haji.html">BADAL HAJI</a></li>
-          <li><a class="nav-link scrollto" href="paket-badal-umrah.html">BADAL UMRAH</a></li>
+          <li><a class="nav-link scrollto active" href="index.html">Beranda</a></li>
+          <li class="dropdown"><a href="javascript:void(0);"><span>Layanan Kami</span> <i
+                class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="paket-haji.php">PAKET HAJI</a></li>
+              <li><a href="paket-umrah.php">PAKET UMRAH</a></li>
+              <li><a href="paket-badal-haji.php">BADAL HAJI</a></li>
+              <li><a href="paket-badal-umrah.php">BADAL UMRAH</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="index.html">Tentang Kami</a></li>
+          <li><a class="nav-link scrollto" href="galeri.html">Galeri</a></li>
+          <li><a class="nav-link scrollto" href="index.html">Team</a></li>
+          <li><a class="nav-link scrollto" href="index.html">Hubungi Kami</a></li>
+          <li><a class="nav-link scrollto" href="admin-login.php">Login</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -66,83 +123,41 @@
 
   <main id="main">
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+    <section class="ctalogin">
 
-        <div class="row gy-4">
-
-          <div class="col-lg-8  ">
-            <div class="portfolio-info">
-              <h3>Pemesanan Badal Haji</h3>
-
-              <ul>
-
-                <label><strong>Waktu Pemesanan</strong></label>
-                <input class="form-control" type="text" value="10 Januari 2024, 22:10:31"
-                  aria-label="Disabled input example" disabled readonly>
-
-                <label><strong>Harga Layanan</strong></label>
-                <input class="form-control" type="text" value="IDR 3.999.000,00 / Pax"
-                  aria-label="Disabled input example" disabled readonly>
-
-                <label><strong>Jumlah Jamaah</strong></label>
-                <input class="form-control" required="" min="1" name="jumlah_jamaah" type="number" value="1"
-                  placeholder="Jumlah Jamaah" autocomplete="off">
-
-                <label><strong>Deskripsi Layanan</strong></label>
-
-                <div style="max-height: 500px;" class="box-keterangan-scroll">
-                  <p>Badal Haji dilaksanakan oleh Muthowif / Ustadz yang sudah berpengalaman</p>
-                </div>
-
-                <label><strong></strong></label>
-
-                <div>
-                  <button type="button" class="btn">Pesan Sekarang</button>
-                </div>
-              </ul>
-
-            </div>
-          </div>
-
-
-
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Syarat & Ketentuan</h3>
-              <ul>
-                <li><strong>Kelayakan Peserta</strong> Badal Haji haruslah merupakan individu yang telah mengikuti
-                  perjalanan umrah sebelumnya dan memiliki keinginan untuk memberikan peluang serupa kepada orang lain.
-                </li>
-                <li><strong>Dokumen Dukungan</strong>
-                  Peserta wajib menyertakan salinan dokumen perjalanan umrah sebelumnya sebagai bukti partisipasi
-                  sebelumnya.</li>
-
-                <li><strong>Perubahan atau pembatalan</strong> Perubahan atau pembatalan pesanan hanya dapat dilakukan
-                  dalam batas waktu yang telah ditetapkan sebelum keberangkatan. Syarat dan ketentuan perubahan atau
-                  pembatalan akan diberikan pada saat pemesanan.</li>
-
-                <li><strong>Penyesuaian Biaya</strong>
-                  Biaya badal umrah dapat disesuaikan berdasarkan perubahan kondisi pasar, regulasi pemerintah, atau
-                  faktor-faktor lain yang memengaruhi biaya perjalanan.</li>
-
-                <li><strong>Ketentuan Tambahan</strong>
-                  Ketentuan tambahan yang berlaku dapat diinformasikan oleh Redho Tours & Travel sesuai dengan kebijakan
-                  perusahaan dan regulasi pemerintah yang berlaku.</li>
-
-              </ul>
-            </div>
+      <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required value="<?php echo htmlspecialchars($username); ?>">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <button class="cta-btn" type="submit">Login</button>
+            </form>
+            <?php
+            // Tampilkan pesan error jika login gagal
+            if ($pesanError !== "") {
+                echo '<div class="alert alert-danger mt-3" role="alert">' . $pesanError . '</div>';
+            }
+            ?>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </section>
 
 
-
-
-  </main><!-- End #main -->
+    
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -153,11 +168,9 @@
           <div class="col-lg-3 col-md-3 footer-info">
             <h3>Redho Tours & Travel</h3>
             <p>
-              Jl. Pahlawan Raya No.97 <br>
+              Jl. M.H. Thamrin No.1 <br>
               Rempoa Ciputat Timur Tangerang Selatan<br><br>
               <strong>Phone:</strong> (021) 749 6093<br>
-              <strong>Mobile:</strong> 0811 811 0953<br>
-
               <strong>Email:</strong> info@redhotours.com<br>
             </p>
             <div class="social-links mt-3">
@@ -193,8 +206,10 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="https://wa.me/628989290147?text=Assalamualaikum,%20%0ARedho%20Tours%20and%20Travel,%20saya%20tertarik%20untuk%20memesan%20layanan%20Haji%20dan%20Umroh.%20%0AMohon%20informasi%20lebih%20lanjut%20mengenai%20paket,%20jadwal,%20dan%20biaya.%20Terima%20kasih!"
+  class="back-to-top d-flex align-items-center justify-content-center">
+   <img src="assets/img/ico/whatsapp.png" alt="WhatsApp Icon" style="width: 45px; height: 45px;">
+</a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -207,6 +222,21 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function generateWhatsAppLink() {
+      var nama = document.getElementById('nama').value;
+      var noHp = document.getElementById('noHp').value;
+      var email = document.getElementById('email').value;
+      var pesan = document.getElementById('pesan').value;
+
+      var whatsappMessage = "Assalamualaikum,\nNama saya " + nama + "\nNo WA: " + noHp + "\nEmail: " + email + "\n\n" + pesan;
+
+      var whatsappLink = "https://wa.me/628989290147?text=" + encodeURIComponent(whatsappMessage);
+
+      window.location.href = whatsappLink;
+    }
+  </script>
+
 
 </body>
 

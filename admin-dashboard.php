@@ -12,6 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
     header("Location: admin-login.php");
     exit();
 }
+
+// Proses logout jika tombol logout diklik
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
+    // Hapus semua data sesi
+    session_unset();
+    
+    // Hancurkan sesi
+    session_destroy();
+    
+    // Redirect ke halaman login atau halaman lain yang sesuai
+    header("Location: login.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
                         <a class="collapse-item" href="admin-paketbadalumrah.php">Form Paket Badal Umrah</a>
                         <a class="collapse-item" href="admin-pakethaji.php">Form Paket Haji</a>
                         <a class="collapse-item" href="admin-paketumrah.php">Form Paket Umrah</a>
+                        <form method="post" style="text-align: center; margin-top: 20px;">
+                        <button type="submit" name="logout" class="btn btn-danger">Logout</button>
+                    </form>
+
 
                     </div>
                 </div>
@@ -73,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["logout"])) {
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Selamat Datang</h6>
+
                         </div>
                         <div class="card-body">
                             <p>
