@@ -112,8 +112,6 @@ if (isset($_GET['hal'])) {
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <!-- <h1 class="text-light"><a href="index.html"><span>Yean Beauty</span></a></h1> -->
-        <!-- Uncomment below if you prefer to use an image logo -->
         <a href="index.html"><img src="assets/img/logo/redhotourslogotext-removebg-preview2.png" alt="" class="img-fluid"></a>
       </div>
 
